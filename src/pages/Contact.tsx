@@ -79,13 +79,13 @@ const Contact = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mt-8 p-6 bg-secondary/50 rounded-2xl"
+              className="mt-8 p-6 bg-secondary/50 roundedi-2xl"
             >
               <h3 className="font-semibold text-foreground mb-4 text-center">FAQ</h3>
               <Accordion type="single" collapsible className="w-full">
                 {faqItems.map((item, i) => (
                   <AccordionItem key={i} value={`item-${i}`}>
-                    <AccordionTrigger className="text-sm text-foreground hover:text-primary">
+                    <AccordionTrigger className="text-sm text-foreground hover:font-bold hover:text-foreground no-underline">
                       {item.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-sm text-muted-foreground">

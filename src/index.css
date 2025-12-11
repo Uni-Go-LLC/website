@@ -45,18 +45,18 @@
     --uni-dark: 220 25% 10%;
     --uni-darker: 220 30% 6%;
     --uni-gray: 220 15% 35%;
-    
+
     /* Gradients */
     --gradient-gold: linear-gradient(135deg, hsl(45 80% 57%) 0%, hsl(35 85% 55%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(220 20% 97%) 0%, hsl(220 25% 94%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 20% 98%) 100%);
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 8px -2px hsl(220 25% 10% / 0.08);
     --shadow-md: 0 8px 24px -8px hsl(220 25% 10% / 0.12);
     --shadow-lg: 0 16px 48px -16px hsl(220 25% 10% / 0.15);
     --shadow-gold: 0 8px 32px -8px hsl(45 80% 57% / 0.35);
-    
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -102,7 +102,7 @@
     --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
     --shadow-md: 0 8px 24px -8px hsl(0 0% 0% / 0.4);
     --shadow-lg: 0 16px 48px -16px hsl(0 0% 0% / 0.5);
-    
+
     --sidebar-background: 220 30% 8%;
     --sidebar-foreground: 220 15% 90%;
     --sidebar-primary: 45 80% 57%;
@@ -128,9 +128,22 @@
     font-family: 'Sora', sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Sora', sans-serif;
     @apply font-bold tracking-tight;
+  }
+
+  a {
+    @apply no-underline;
+  }
+
+  a:hover {
+    @apply font-bold;
   }
 }
 

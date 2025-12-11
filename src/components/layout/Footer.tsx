@@ -46,7 +46,7 @@ export const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                    className="text-muted-foreground text-sm hover:text-muted-foreground"
                   >
                     {link.name}
                   </Link>
@@ -63,7 +63,7 @@ export const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                    className="text-muted-foreground text-sm hover:text-muted-foreground"
                   >
                     {link.name}
                   </Link>
@@ -77,7 +77,7 @@ export const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <a
               href="mailto:uni.go.llc@gmail.com"
-              className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-muted-foreground text-sm hover:text-muted-foreground"
             >
               <Mail className="w-4 h-4" />
               uni.go.llc@gmail.com
