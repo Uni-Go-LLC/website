@@ -129,9 +129,6 @@ const About = () => {
               We're building a platform where students can earn money, save money, and make connections—all 
               while getting where they need to go.
             </p>
-            <p className="text-lg text-foreground font-medium">
-              Launching at Augustana University in 2026 🎉
-            </p>
           </motion.div>
         </div>
       </section>
