@@ -6,7 +6,7 @@ import { PhoneMockup } from "@/components/ui/PhoneMockup";
 
 const timeline = [
   { phase: "Phase 1", title: "Sign Up", date: "Now", description: "Register your interest and join our beta tester community", active: true },
-  { phase: "Phase 2", title: "App Testing", date: "Early 2026", description: "Get early access to test core features as a rider or driver" },
+  { phase: "Phase 2", title: "Launch Beta Test", date: "Early 2026", description: "Get early access to test core features as a rider or driver" },
   { phase: "Phase 3", title: "Feedback & Iteration", date: "Spring 2026", description: "Share feedback and help us refine the experience" },
   { phase: "Phase 4", title: "Launch", date: "Fall 2026", description: "Official launch at Augustana University" },
 ];
@@ -66,8 +66,8 @@ const Beta = () => {
               {/* Quick Stats */}
               <div className="flex gap-8">
                 <div>
-                  <div className="text-2xl font-bold text-primary">$30/hr</div>
-                  <div className="text-sm text-muted-foreground">In rewards</div>
+                  <div className="text-2xl font-bold text-primary">Upto $30/hr</div>
+                  <div className="text-sm text-muted-foreground">As a Driver</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-foreground">2026</div>
