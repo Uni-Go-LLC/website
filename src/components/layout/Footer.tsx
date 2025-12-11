@@ -1,0 +1,108 @@
+import { Link } from "react-router-dom";
+import { Car, Mail, Apple } from "lucide-react";
+
+const legalLinks = [
+  { name: "Terms & Conditions", path: "/legal/terms" },
+  { name: "Privacy Policy", path: "/legal/privacy" },
+  { name: "Driving Guide", path: "/legal/driving-guide" },
+  { name: "Zero Tolerance Policy", path: "/legal/zero-tolerance" },
+  { name: "Community Standards", path: "/legal/community-standards" },
+  { name: "Privacy Choices", path: "/legal/privacy-choices" },
+];
+
+const mainLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Beta Test", path: "/beta" },
+  { name: "Contact", path: "/contact" },
+  { name: "Feedback", path: "/feedback" },
+];
+
+export const Footer = () => {
+  return (
+    <footer className="bg-card border-t border-border">
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+                <Car className="w-5 h-5 text-primary-foreground" />
+              </div>
+              <span className="text-xl font-bold text-foreground">
+                Uni<span className="text-primary">Go</span>
+              </span>
+            </Link>
+            <p className="text-muted-foreground text-sm mb-4">
+              The ride-sharing app made exclusively for college students. Connect, ride, and save together.
+            </p>
+            <a
+              href="https://apps.apple.com/app/uni-go"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-foreground text-background rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+            >
+              <Apple className="w-4 h-4" />
+              App Store
+            </a>
+          </div>
+
+          {/* Navigation */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
+            <ul className="space-y-2">
+              {mainLinks.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Legal</h4>
+            <ul className="space-y-2">
+              {legalLinks.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Contact</h4>
+            <a
+              href="mailto:support@unigo.app"
+              className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors"
+            >
+              <Mail className="w-4 h-4" />
+              support@unigo.app
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-muted-foreground text-sm">
+            © {new Date().getFullYear()} Uni Go. All rights reserved.
+          </p>
+          <p className="text-muted-foreground text-sm">
+            Made with 💛 for college students
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
