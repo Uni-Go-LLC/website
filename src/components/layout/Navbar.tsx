@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoImage from "@/assets/images/uni-go-logo.png";
+import { BetaSignupButton } from "@/components/BetaSignupButton";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -47,13 +48,8 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
           <div className="hidden md:block">
-            <Button asChild variant="default" className="shadow-gold">
-              <Link to="/beta">
-                Sign Up for Beta
-              </Link>
-            </Button>
+            <BetaSignupButton />
           </div>
 
           {/* Mobile Menu Button */}

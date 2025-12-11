@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Apple, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
@@ -49,7 +49,7 @@ export const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button asChild size="lg" className="shadow-gold group">
                 <Link to="/beta">
-                  Join Beta Test
+                  Sign Up for Beta
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>

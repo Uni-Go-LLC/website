@@ -69,7 +69,7 @@ export const BetaCTASection = () => {
           >
             <Button asChild size="lg" className="shadow-gold group">
               <Link to="/beta">
-                Join the Beta
+                Sign Up for Beta
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>

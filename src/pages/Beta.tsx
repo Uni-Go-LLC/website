@@ -57,7 +57,7 @@ const Beta = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Sign Up for Beta
+                    Fill out the Beta Form
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
@@ -212,7 +212,7 @@ const Beta = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Sign Up Now
+                Fill out the Beta Form
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
