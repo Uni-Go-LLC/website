@@ -36,11 +36,10 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  location.pathname === link.path
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${location.pathname === link.path
+                  ? "bg-primary/10 text-primary"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  }`}
               >
                 {link.name}
               </Link>
@@ -50,13 +49,9 @@ export const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button asChild variant="default" className="shadow-gold">
-              <a
-                href="https://apps.apple.com/app/uni-go"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download App
-              </a>
+              <Link to="/beta">
+                Sign Up for Beta
+              </Link>
             </Button>
           </div>
 
@@ -89,23 +84,18 @@ export const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-all ${
-                    location.pathname === link.path
-                      ? "bg-primary/10 text-primary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                  }`}
+                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-all ${location.pathname === link.path
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                    }`}
                 >
                   {link.name}
                 </Link>
               ))}
               <Button asChild variant="default" className="mt-2 shadow-gold">
-                <a
-                  href="https://apps.apple.com/app/uni-go"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download App
-                </a>
+                <Link to="/beta" onClick={() => setIsOpen(false)}>
+                  Sign Up for Beta
+                </Link>
               </Button>
             </div>
           </motion.div>

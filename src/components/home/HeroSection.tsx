@@ -41,23 +41,13 @@ export const HeroSection = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
-              Uni Go connects students who need rides with those who can offer them. 
+              Uni Go connects students who need rides with those who can offer them.
               Split costs, make friends, and get where you need to go.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button asChild size="lg" className="shadow-gold group">
-                <a
-                  href="https://apps.apple.com/app/uni-go"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Apple className="w-5 h-5 mr-2" />
-                  Download on App Store
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="group">
                 <Link to="/beta">
                   Join Beta Test
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -98,12 +88,12 @@ export const HeroSection = () => {
             <div className="relative">
               {/* Main Phone */}
               <PhoneMockup className="w-56 md:w-64 animate-float" />
-              
+
               {/* Secondary Phone */}
               <div className="absolute -left-12 md:-left-20 top-16 opacity-80 scale-90">
                 <PhoneMockup className="w-48 md:w-56" />
               </div>
-              
+
               {/* Floating Elements */}
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
