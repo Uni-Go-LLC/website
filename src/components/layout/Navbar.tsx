@@ -36,9 +36,9 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${location.pathname === link.path
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                className={`px-4 py-2 rounded-lg text-sm transition-all ${location.pathname === link.path
+                  ? "bg-primary/10 text-black font-bold"
+                  : "text-muted-foreground font-medium hover:text-foreground hover:bg-secondary"
                   }`}
               >
                 {link.name}
@@ -84,9 +84,9 @@ export const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-all ${location.pathname === link.path
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  className={`px-4 py-3 rounded-lg text-sm transition-all ${location.pathname === link.path
+                    ? "bg-primary/10 text-black font-bold"
+                    : "text-muted-foreground font-medium hover:text-foreground hover:bg-secondary"
                     }`}
                 >
                   {link.name}
