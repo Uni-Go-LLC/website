@@ -40,9 +40,6 @@ const Contact = () => {
                 </div>
 
                 <h2 className="text-2xl font-bold text-foreground mb-2">Email Us</h2>
-                <p className="text-muted-foreground mb-6">
-                  Send us an email and we'll respond within 24-48 hours.
-                </p>
 
                 <Button asChild size="lg" className="shadow-gold w-full sm:w-auto">
                   <a href="mailto:uni.go.llc@gmail.com">
@@ -50,13 +47,6 @@ const Contact = () => {
                     uni.go.llc@gmail.com
                   </a>
                 </Button>
-
-                <div className="mt-8 pt-8 border-t border-border">
-                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                    <Clock className="w-4 h-4" />
-                    <span className="text-sm">Response time: 24-48 hours</span>
-                  </div>
-                </div>
               </div>
             </div>
 
