@@ -1,23 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import logoImage from "@/assets/images/uni-go-logo.png";
-
-const legalLinks = [
-  { name: "Terms & Conditions", path: "/legal/terms" },
-  { name: "Privacy Policy", path: "/legal/privacy" },
-  { name: "Driving Guide", path: "/legal/driving-guide" },
-  { name: "Zero Tolerance Policy", path: "/legal/zero-tolerance" },
-  { name: "Community Standards", path: "/legal/community-standards" },
-  { name: "Privacy Choices", path: "/legal/privacy-choices" },
-];
-
-const mainLinks = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Beta Test", path: "/beta" },
-  { name: "Contact", path: "/contact" },
-  { name: "Feedback", path: "/feedback" },
-];
+import { navLinks, legalLinks } from "@/lib/navigation";
 
 export const Footer = () => {
   return (
@@ -43,7 +27,7 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
             <ul className="space-y-2">
-              {mainLinks.map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
