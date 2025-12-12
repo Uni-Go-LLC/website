@@ -71,3 +71,12 @@ To run ESLint and check for code quality issues:
 ```bash
 npm run lint
 ```
+
+## Deploy
+
+### gh-pages
+
+```bash
+rm -rf node_modules/.cache/gh-pages
+npm run deploy
+```
