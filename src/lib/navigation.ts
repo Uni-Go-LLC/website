@@ -6,6 +6,7 @@ export const navLinks = [
   { name: "Beta Test", path: "/beta" },
   { name: "Contact", path: "/contact" },
   { name: "Feedback", path: "/feedback" },
+  { name: "Careers", path: "/careers" },
 ];
 
 export const legalLinks = [
