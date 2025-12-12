@@ -1,19 +1,17 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
-import { ShieldAlert, XCircle } from "lucide-react";
+import { FileText } from "lucide-react";
+import { Document, Page, pdfjs } from "react-pdf";
+import termsPdf from "@/assets/files/zeroTolerance.pdf";
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 
-const violations = [
-  "Driving under the influence of alcohol or drugs",
-  "Physical violence or threats of violence",
-  "Sexual harassment or assault",
-  "Discrimination based on race, gender, religion, or any protected class",
-  "Theft or damage to property",
-  "Fraudulent activity or misrepresentation",
-  "Sharing of inappropriate or explicit content",
-  "Stalking or harassment of any kind",
-];
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const ZeroTolerance = () => {
+  const [numPages, setNumPages] = useState<number>();
+
   return (
     <Layout>
       <section className="py-16 md:py-24">
@@ -21,64 +19,33 @@ const ZeroTolerance = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl mx-auto"
+            className="max-w-5xl mx-auto"
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center">
-                <ShieldAlert className="w-6 h-6 text-destructive" />
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <FileText className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-foreground">Zero Tolerance Policy</h1>
-                <p className="text-muted-foreground">Keeping our community safe</p>
+                <h1 className="text-3xl font-bold text-foreground">Zero Tolerance</h1>
+                <p className="text-muted-foreground">Last updated: December 2025</p>
               </div>
             </div>
 
-            <div className="bg-card rounded-2xl p-8 border border-border mb-8">
-              <h2 className="text-xl font-semibold text-foreground mb-4">Our Commitment</h2>
-              <p className="text-muted-foreground mb-6">
-                Uni Go is committed to maintaining a safe and respectful environment for all users. 
-                We have a zero tolerance policy for any behavior that threatens the safety, comfort, 
-                or dignity of our community members.
-              </p>
-
-              <div className="p-4 bg-destructive/5 rounded-xl border border-destructive/20 mb-6">
-                <p className="text-foreground font-medium">
-                  Violations of this policy will result in immediate and permanent account suspension.
-                </p>
-              </div>
-
-              <h3 className="text-lg font-semibold text-foreground mb-4">Prohibited Behaviors</h3>
-              <ul className="space-y-3">
-                {violations.map((violation, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    className="flex items-start gap-3"
-                  >
-                    <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{violation}</span>
-                  </motion.li>
+            <div className="bg-card rounded-2xl border border-border overflow-y-auto shadow-lg" style={{ height: '800px' }}>
+              <Document
+                file={termsPdf}
+                onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+                className="flex flex-col items-center gap-4 p-8"
+              >
+                {Array.from(new Array(numPages), (_, index) => (
+                  <div key={`page_${index + 1}`} className="shadow-lg rounded-lg overflow-hidden">
+                    <Page
+                      pageNumber={index + 1}
+                      width={Math.min(window.innerWidth * 0.7, 700)}
+                    />
+                  </div>
                 ))}
-              </ul>
-            </div>
-
-            <div className="bg-card rounded-2xl p-8 border border-border">
-              <h2 className="text-xl font-semibold text-foreground mb-4">Reporting Violations</h2>
-              <p className="text-muted-foreground mb-4">
-                If you experience or witness any violation of this policy, please report it immediately. 
-                All reports are taken seriously and investigated promptly.
-              </p>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Use the in-app reporting feature</li>
-                <li>• Email us at{" "}
-                  <a href="mailto:support@unigo.app" className="text-primary hover:underline">
-                    support@unigo.app
-                  </a>
-                </li>
-                <li>• In case of emergency, always contact local authorities first</li>
-              </ul>
+              </Document>
             </div>
           </motion.div>
         </div>

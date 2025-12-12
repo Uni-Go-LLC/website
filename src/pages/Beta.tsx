@@ -2,18 +2,19 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { TestTube, Calendar, Gift, Users, Car, CheckCircle, ArrowRight, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PhoneMockup } from "@/components/ui/PhoneMockup";
 
 const timeline = [
   { phase: "Phase 1", title: "Sign Up", date: "Now", description: "Register your interest and join our beta tester community", active: true },
-  { phase: "Phase 2", title: "App Testing", date: "Early 2026", description: "Get early access to test core features as a rider or driver" },
+  { phase: "Phase 2", title: "Launch Beta Test", date: "Early 2026", description: "Get early access to test core features as a rider or driver" },
   { phase: "Phase 3", title: "Feedback & Iteration", date: "Spring 2026", description: "Share feedback and help us refine the experience" },
   { phase: "Phase 4", title: "Launch", date: "Fall 2026", description: "Official launch at Augustana University" },
 ];
 
 const rewards = [
-  { icon: Gift, title: "Gift Cards", description: "Earn up to $30/hr in gift card rewards" },
-  { icon: Users, title: "Exclusive Access", description: "Be first to try new features" },
+  {
+    icon: Gift, title: "Gift Cards", description: "Gift cards & prizes for participating"
+  },
+  { icon: Users, title: "Early Access", description: "Be first to try new features" },
   { icon: CheckCircle, title: "Shape the App", description: "Your feedback directly impacts development" },
 ];
 
@@ -28,34 +29,29 @@ const Beta = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <TestTube className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Beta Testing Program</span>
-              </div>
-
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Help Us Launch <span className="text-gradient-gold">Uni Go</span>
+                Help Us Launch Uni <span className="text-gradient-gold">Go</span>
               </h1>
 
               <p className="text-lg text-muted-foreground mb-6">
-                Be part of the team that brings Uni Go to Augustana University! Sign up to test 
-                the app as a rider, driver, or both. Earn rewards while helping us build the 
+                Be part of the team that brings Uni Go to Augustana University! Sign up to test
+                the app as a rider, driver, or both. Earn rewards while helping us build the
                 perfect ridesharing experience for students.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button asChild size="lg" className="shadow-gold group">
                   <a
-                    href="https://forms.google.com/unigo-beta"
+                    href="https://forms.gle/uLgw6DH4pcYdvszg7"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Sign Up for Beta
+                    Fill out the Beta Form
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
@@ -64,31 +60,13 @@ const Beta = () => {
               {/* Quick Stats */}
               <div className="flex gap-8">
                 <div>
-                  <div className="text-2xl font-bold text-primary">$30/hr</div>
-                  <div className="text-sm text-muted-foreground">In rewards</div>
+                  <div className="text-2xl font-bold text-primary">Upto $30/hr</div>
+                  <div className="text-sm text-muted-foreground">As a Driver</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-foreground">2026</div>
                   <div className="text-sm text-muted-foreground">Launch year</div>
                 </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="flex justify-center"
-            >
-              <div className="relative">
-                <PhoneMockup className="w-56 md:w-64" />
-                <motion.div
-                  animate={{ rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -top-4 -right-4 bg-primary rounded-xl p-3 shadow-gold"
-                >
-                  <TestTube className="w-6 h-6 text-primary-foreground" />
-                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -161,9 +139,8 @@ const Beta = () => {
                 className="flex gap-4 mb-8 last:mb-0"
               >
                 <div className="flex flex-col items-center">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                    item.active ? 'bg-primary shadow-gold' : 'bg-secondary'
-                  }`}>
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${item.active ? 'bg-primary shadow-gold' : 'bg-secondary'
+                    }`}>
                     {item.active ? (
                       <Clock className={`w-6 h-6 ${item.active ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
                     ) : (
@@ -176,7 +153,7 @@ const Beta = () => {
                 </div>
                 <div className={`flex-1 pb-8 ${item.active ? '' : ''}`}>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded">
+                    <span className="text-xs font-medium text-black bg-primary/10 px-2 py-0.5 rounded">
                       {item.phase}
                     </span>
                     <span className="text-sm text-muted-foreground">{item.date}</span>
@@ -207,11 +184,11 @@ const Beta = () => {
             </p>
             <Button asChild size="lg" className="shadow-gold">
               <a
-                href="https://forms.google.com/unigo-beta"
+                href="https://forms.gle/uLgw6DH4pcYdvszg7"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Sign Up Now
+                Fill out the Beta Form
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>

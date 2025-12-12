@@ -1,9 +1,62 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
-import { Mail, MessageCircle, Clock } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { a } from "node_modules/framer-motion/dist/types.d-DagZKalS";
 
 const Contact = () => {
+  const faqItems = [
+    {
+      question: "How do I sign up for the beta test?",
+      answer: "You can sign up for the beta test by clicking the 'Sign Up for Beta' button on our website or navigating to our Beta page. Fill out the form with your details to get started!"
+    },
+    {
+      question: "When will Uni Go launch?",
+      answer: "We're currently in beta testing phase with select universities. Full launch details will be in Spring 2026. Stay tuned for updates!"
+    },
+    {
+      question: "How do drivers get paid?",
+      answer: "When you post a ride as a driver, you set your own price for the trip. You keep 100% of the fare. You can also accept ride requests from other users and earn money that way."
+    },
+    {
+      question: "Can I set my own schedule as a driver?",
+      answer: "Yes, drivers can set their own schedules and work as much or as little as they want. You can choose to fulfill any rides that others request or post your own."
+    },
+    { 
+      question: "Can drivers drive casually or is there a commitment?",
+      answer: "Drivers have complete flexibility. You can drive casually whenever you want without any long-term commitment. Just log in, accept rides, post your own rides, and start earning!"
+    },
+    {
+    question: "Can I choose who I drive?",
+    answer: "As a driver, you can view rider profiles and ratings before accepting ride requests. This allows you to choose riders you feel comfortable driving."
+    },
+    {
+      question: "How can I make sure I don't miss any rides?",
+      answer: "In your account settings, you can set certain locations to receive notifications so you never miss a ride for that location."
+    },
+    {
+      question: "Can I be a rider and a driver?",
+      answer: "Absolutely! Many users choose to be both riders and drivers on Uni Go. You can switch between roles based on your needs and availability."
+    },
+    {
+      question: "As a rider, can I coordinate rides with friends?",
+      answer: "Yes, when creating your ride, enter how many seats you would need so the appropriate drivers can accept with your request."
+      },
+    {
+      question: "Can I choose who I ride with?",
+      answer: "Yes, as a rider, you can view driver profiles and ratings before accepting. This way, you can choose to ride with drivers you feel comfortable with."
+    },
+    {
+    question: "Is there an Android app available?",
+    answer: "Currently, Uni Go is available as an iOS app. We are working on developing native apps for Android, which will be released in the near future."
+    },
+  ];
   return (
     <Layout>
       <section className="py-16 md:py-24">
@@ -13,11 +66,6 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-2xl mx-auto text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <MessageCircle className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Get in Touch</span>
-            </div>
-
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Contact <span className="text-gradient-gold">Us</span>
             </h1>
@@ -40,23 +88,13 @@ const Contact = () => {
                 </div>
 
                 <h2 className="text-2xl font-bold text-foreground mb-2">Email Us</h2>
-                <p className="text-muted-foreground mb-6">
-                  Send us an email and we'll respond within 24-48 hours.
-                </p>
 
                 <Button asChild size="lg" className="shadow-gold w-full sm:w-auto">
-                  <a href="mailto:support@unigo.app">
+                  <a href="mailto:uni.go.llc@gmail.com">
                     <Mail className="w-5 h-5 mr-2" />
-                    support@unigo.app
+                    uni.go.llc@gmail.com
                   </a>
                 </Button>
-
-                <div className="mt-8 pt-8 border-t border-border">
-                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                    <Clock className="w-4 h-4" />
-                    <span className="text-sm">Response time: 24-48 hours</span>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -65,27 +103,21 @@ const Contact = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mt-8 p-6 bg-secondary/50 rounded-2xl"
+              className="mt-8 p-6 bg-secondary/50 roundedi-2xl"
             >
-              <h3 className="font-semibold text-foreground mb-4 text-center">Common Questions</h3>
-              <div className="space-y-3">
-                {[
-                  "How do I sign up for the beta test?",
-                  "When will Uni Go launch?",
-                  "Is Uni Go available at my university?",
-                  "How do drivers get paid?",
-                ].map((question, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 text-sm text-muted-foreground"
-                  >
-                    <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-medium text-primary">
-                      ?
-                    </span>
-                    {question}
-                  </div>
+              <h3 className="font-semibold text-foreground mb-4 text-center">FAQ</h3>
+              <Accordion type="single" collapsible className="w-full">
+                {faqItems.map((item, i) => (
+                  <AccordionItem key={i} value={`item-${i}`}>
+                    <AccordionTrigger className="text-sm text-foreground hover:font-bold hover:text-foreground no-underline">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm text-muted-foreground">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </div>
+              </Accordion>
             </motion.div>
           </motion.div>
         </div>

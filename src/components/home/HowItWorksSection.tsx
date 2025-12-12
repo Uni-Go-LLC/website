@@ -47,7 +47,7 @@ export const HowItWorksSection = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-foreground">Have a Car?</h3>
-                <p className="text-sm text-primary font-medium">Earn up to $30/hr</p>
+                <p className="text-sm text-muted-foreground font-medium">Earn up to $30/hr</p>
               </div>
             </div>
 

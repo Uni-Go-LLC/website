@@ -24,7 +24,7 @@ export const UseCasesSection = () => {
             Where Do You Need to Go?
           </h2>
           <p className="text-lg text-muted-foreground">
-            Uni Go is perfect for any trip, big or small.
+            Uni Go is perfect for any trip, big, or small.
           </p>
         </motion.div>
 

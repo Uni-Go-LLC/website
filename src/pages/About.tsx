@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { Car, Shield, Users, Heart, Target, Zap } from "lucide-react";
-import { PhoneMockup } from "@/components/ui/PhoneMockup";
+import rideFeedImage from "@/assets/images/ride-feed.png";
 
 const values = [
   {
@@ -37,11 +37,6 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <Car className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Our Story</span>
-              </div>
-
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 What is <span className="text-gradient-gold">Uni Go</span>?
               </h1>
@@ -65,7 +60,9 @@ const About = () => {
               transition={{ delay: 0.2 }}
               className="flex justify-center"
             >
-              <PhoneMockup className="w-56 md:w-64" />
+              <div className="w-56 md:w-64">
+                <img src={rideFeedImage} alt="Ride Feed Screen" className="w-48 md:w-56 rounded-3xl shadow-uni-lg" />
+              </div>
             </motion.div>
           </div>
         </div>
@@ -128,9 +125,6 @@ const About = () => {
               To make transportation accessible, affordable, and social for every college student. 
               We're building a platform where students can earn money, save money, and make connections—all 
               while getting where they need to go.
-            </p>
-            <p className="text-lg text-foreground font-medium">
-              Launching at Augustana University in 2026 🎉
             </p>
           </motion.div>
         </div>

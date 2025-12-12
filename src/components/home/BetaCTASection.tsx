@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Gift, TestTube, Users } from "lucide-react";
+import { ArrowRight, Gift, Users, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -14,16 +14,6 @@ export const BetaCTASection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-6"
-          >
-            <TestTube className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Beta Testing Now Open</span>
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +32,7 @@ export const BetaCTASection = () => {
             transition={{ delay: 0.2 }}
             className="text-lg text-background/70 mb-8 max-w-2xl mx-auto"
           >
-            Sign up to test the app as a rider, driver, or both. Share feedback to help us build features that work for students.
+            Sign up to test the app as a rider, driver, or both. Share feedback to help us build features that work for you.
           </motion.p>
 
           {/* Benefits */}
@@ -54,9 +44,9 @@ export const BetaCTASection = () => {
             className="grid md:grid-cols-3 gap-6 mb-10"
           >
             {[
-              { icon: Gift, title: "Earn Rewards", description: "Gift cards & prizes for participating" },
-              { icon: TestTube, title: "Early Access", description: "Be first to use new features" },
-              { icon: Users, title: "Shape the App", description: "Your feedback directly impacts development" },
+              { icon: Gift, title: "Gift Cards", description: "Gift cards & prizes for participating" },
+              { icon: Users, title: "Early Access", description: "Be first to try new features" },
+              { icon: CheckCircle, title: "Shape the App", description: "Your feedback directly impacts development" },
             ].map((benefit, i) => (
               <div
                 key={benefit.title}
@@ -79,7 +69,7 @@ export const BetaCTASection = () => {
           >
             <Button asChild size="lg" className="shadow-gold group">
               <Link to="/beta">
-                Join the Beta
+                Sign Up for Beta
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>

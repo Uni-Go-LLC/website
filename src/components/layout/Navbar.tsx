@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Car } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImage from "@/assets/images/uni-go-logo.png";
+import { BetaSignupButton } from "@/components/BetaSignupButton";
 
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
+  { name: "For Riders", path: "/riders" },
+  { name: "For Drivers", path: "/drivers" },
   { name: "Beta Test", path: "/beta" },
   { name: "Contact", path: "/contact" },
   { name: "Feedback", path: "/feedback" },
@@ -22,11 +26,11 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-gold group-hover:scale-105 transition-transform">
-              <Car className="w-5 h-5 text-primary-foreground" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-gold group-hover:scale-105 transition-transform">
+              <img src={logoImage} alt="Uni Go Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-xl font-bold text-foreground">
-              Uni<span className="text-primary">Go</span>
+              Uni Go
             </span>
           </Link>
 
@@ -36,28 +40,18 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  location.pathname === link.path
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}
+                className={`px-4 py-2 rounded-lg text-sm transition-all ${location.pathname === link.path
+                  ? "bg-primary/10 text-black font-bold"
+                  : "text-muted-foreground font-medium hover:text-foreground hover:bg-secondary"
+                  }`}
               >
                 {link.name}
               </Link>
             ))}
           </div>
 
-          {/* CTA Button */}
           <div className="hidden md:block">
-            <Button asChild variant="default" className="shadow-gold">
-              <a
-                href="https://apps.apple.com/app/uni-go"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download App
-              </a>
-            </Button>
+            <BetaSignupButton />
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,23 +83,18 @@ export const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-all ${
-                    location.pathname === link.path
-                      ? "bg-primary/10 text-primary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                  }`}
+                  className={`px-4 py-3 rounded-lg text-sm transition-all ${location.pathname === link.path
+                    ? "bg-primary/10 text-black font-bold"
+                    : "text-muted-foreground font-medium hover:text-foreground hover:bg-secondary"
+                    }`}
                 >
                   {link.name}
                 </Link>
               ))}
               <Button asChild variant="default" className="mt-2 shadow-gold">
-                <a
-                  href="https://apps.apple.com/app/uni-go"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download App
-                </a>
+                <Link to="/beta" onClick={() => setIsOpen(false)}>
+                  Sign Up for Beta
+                </Link>
               </Button>
             </div>
           </motion.div>

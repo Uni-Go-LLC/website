@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { FileText } from "lucide-react";
 import { Document, Page, pdfjs } from "react-pdf";
-import termsPdf from "@/assets/files/termsAndConditions.pdf";
+import termsPdf from "@/assets/files/privacyPolicy.pdf";
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
-const Terms = () => {
+const PrivacyPolicy = () => {
   const [numPages, setNumPages] = useState<number>();
 
   return (
@@ -26,7 +26,7 @@ const Terms = () => {
                 <FileText className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-foreground">Terms & Conditions</h1>
+                <h1 className="text-3xl font-bold text-foreground">Privacy Policy</h1>
                 <p className="text-muted-foreground">Last updated: December 2025</p>
               </div>
             </div>
@@ -54,4 +54,4 @@ const Terms = () => {
   );
 };
 
-export default Terms;
+export default PrivacyPolicy;
