@@ -37,13 +37,14 @@ export const HeroSection = () => {
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Ride Together,{" "}
-              <span className="text-gradient-gold">Save Together</span>
+              Ridesharing for students,{" "}
+              <span className="text-gradient-gold">by students</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
               Uni Go connects students who need rides with those who can offer them.
-              Split costs, make friends, and get where you need to go.
+              Whether you’re getting groceries, catching a flight, going out with friends, or going home for break,
+              Uni Go makes it simple to get where you need to go.
             </p>
 
             {/* CTA Buttons */}
