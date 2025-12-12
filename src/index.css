@@ -4,8 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
 
-/* Uni Go Design System - College Ridesharing App */
-
 @layer base {
   :root {
     --background: 220 20% 97%;
