@@ -5,16 +5,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoImage from "@/assets/images/uni-go-logo.png";
 import { BetaSignupButton } from "@/components/BetaSignupButton";
-
-const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "For Riders", path: "/riders" },
-  { name: "For Drivers", path: "/drivers" },
-  { name: "Beta Test", path: "/beta" },
-  { name: "Contact", path: "/contact" },
-  { name: "Feedback", path: "/feedback" },
-];
+import { navLinks } from "@/lib/navigation";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
