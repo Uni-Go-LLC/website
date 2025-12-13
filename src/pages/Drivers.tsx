@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { Users, MapPin, DollarSign, Shield, Clock, Bell } from "lucide-react";
 import { BetaSignupButton } from "@/components/BetaSignupButton";
+import createRideOfferImage from "@/assets/images/create-ride-offer-2.png";
+import offerRideDetailsImage from "@/assets/images/offer-ride-details.png";
 
 const features = [
     {
@@ -29,11 +31,11 @@ const features = [
         title: "Short or Long Trips",
         description: "Drive around town or when you are headed home for breaks. You choose the distance.",
     },
-  {
-    icon: Bell,
-    title: "Never Miss a Ride Request",
-    description: "Set points of interest to get notified when someone requests a ride for your favorite routes.",
-  },
+    {
+        icon: Bell,
+        title: "Never Miss a Ride Request",
+        description: "Set points of interest to get notified when someone requests a ride for your favorite routes.",
+    },
 ];
 
 const howItWorks = [
@@ -70,21 +72,38 @@ const Drivers = () => {
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-center max-w-3xl mx-auto"
-                    >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                            Drive &{" "}
-                            <span className="text-gradient-gold">Earn</span>
-                        </h1>
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-center lg:text-left max-w-3xl mx-auto lg:mx-0"
+                        >
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+                                Drive &{" "}
+                                <span className="text-gradient-gold">Earn</span>
+                            </h1>
 
-                        <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                            Turn your time into extra income. Drive fellow students to get where they need to go
-                            and make money for it. No hidden fees, no commission.
-                        </p>
-                    </motion.div>
+                            <p className="text-lg md:text-xl text-muted-foreground mb-8">
+                                Turn your time into extra income. Drive fellow students to get where they need to go
+                                and make money for it. No hidden fees, no commission.
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="flex justify-center lg:justify-end"
+                        >
+                            <div className="relative -ml-24 md:ml-0 md:mr-4 lg:mr-8">
+                                <img src={createRideOfferImage} alt="Create Ride Offer Screen" className="w-56 md:w-64 animate-float rounded-3xl shadow-uni-lg" />
+
+                                <div className="absolute -right-24 md:-right-44 top-16">
+                                    <img src={offerRideDetailsImage} alt="Offer Ride Details Screen" className="w-48 md:w-56 rounded-3xl shadow-uni-lg" />
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
