@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
-import { Car, Shield, Users, Heart, Target, Zap } from "lucide-react";
+import { Shield, Users, Heart, Target, Zap } from "lucide-react";
 import rideFeedImage from "@/assets/images/ride-feed.png";
 
 const values = [
@@ -42,14 +42,14 @@ const About = () => {
               </h1>
 
               <p className="text-lg text-muted-foreground mb-6">
-                Uni Go is an app that connects students who need rides with those who can offer them. 
-                Whether you're heading to the grocery store, catching a flight, or driving home for break, 
+                Uni Go is an app that connects students who need rides with those who can offer them.
+                Whether you're heading to the grocery store, catching a flight, or driving home for break,
                 Uni Go makes it easy to share rides and split costs with fellow students.
               </p>
 
               <p className="text-lg text-muted-foreground">
-                We believe transportation shouldn't be a barrier to college life. That's why we built 
-                an app where drivers keep 100% of their earnings and riders get affordable rides from 
+                We believe transportation shouldn't be a barrier to college life. That's why we built
+                an app where drivers keep 100% of their earnings and riders get affordable rides from
                 people they can trust.
               </p>
             </motion.div>
@@ -58,9 +58,9 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="flex justify-center"
+              className="flex justify-center lg:justify-end"
             >
-              <div className="w-56 md:w-64">
+              <div className="relative mr-4 md:mr-8">
                 <img src={rideFeedImage} alt="Ride Feed Screen" className="w-48 md:w-56 rounded-3xl shadow-uni-lg" />
               </div>
             </motion.div>
@@ -122,8 +122,8 @@ const About = () => {
               Our Mission
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              To make transportation accessible, affordable, and social for every college student. 
-              We're building a platform where students can earn money, save money, and make connections—all 
+              To make transportation accessible, affordable, and social for every college student.
+              We're building a platform where students can earn money, save money, and make connections—all
               while getting where they need to go.
             </p>
           </motion.div>
