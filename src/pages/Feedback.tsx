@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
-import { Mail, MessageSquare, Star, Lightbulb, Bug } from "lucide-react";
+import { Send, Star, Lightbulb, Bug, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const feedbackTypes = [
@@ -59,21 +59,22 @@ const Feedback = () => {
           >
             <div className="bg-card rounded-3xl p-8 md:p-12 border border-border shadow-uni-md text-center">
               <div className="w-20 h-20 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-6 shadow-gold">
-                <Mail className="w-10 h-10 text-primary-foreground" />
+                <MessageCircle className="w-10 h-10 text-primary-foreground" />
               </div>
 
               <h2 className="text-2xl font-bold text-foreground mb-2">Send Us Feedback</h2>
               <p className="text-muted-foreground mb-6">
-                Email us with your feedback and include as much detail as possible.
-                Screenshots are always helpful!
+                Send us your feedback and include as much detail as possible.
               </p>
 
               <Button asChild size="lg" className="shadow-gold w-full sm:w-auto">
-                <a href="mailto:uni.go.llc@gmail.com?subject=Feedback">
-                  <Mail className="w-5 h-5 mr-2" />
-                  uni.go.llc@gmail.com
+                <a href={"https://forms.gle/zDgBJKe3ZvYWEnoF9"} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Submit Feedback
                 </a>
               </Button>
+
+
             </div>
           </motion.div>
         </div>
