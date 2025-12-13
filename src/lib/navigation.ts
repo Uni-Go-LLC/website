@@ -14,5 +14,4 @@ export const legalLinks = [
   { name: "Driving Guide", path: "/legal/driving-guide" },
   { name: "Zero Tolerance Policy", path: "/legal/zero-tolerance" },
   { name: "Community Standards", path: "/legal/community-standards" },
-  { name: "Privacy Choices", path: "/legal/privacy-choices" },
 ];

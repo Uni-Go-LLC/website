@@ -18,7 +18,6 @@ import Privacy from "./pages/legal/PrivacyPolicy";
 import DrivingGuide from "./pages/legal/DrivingGuide";
 import ZeroTolerance from "./pages/legal/ZeroTolerance";
 import CommunityStandards from "./pages/legal/CommunityStandards";
-import PrivacyChoices from "./pages/legal/PrivacyChoices";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -57,7 +56,6 @@ const App = () => (
           <Route path="/legal/driving-guide" element={<DrivingGuide />} />
           <Route path="/legal/zero-tolerance" element={<ZeroTolerance />} />
           <Route path="/legal/community-standards" element={<CommunityStandards />} />
-          <Route path="/legal/privacy-choices" element={<PrivacyChoices />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
