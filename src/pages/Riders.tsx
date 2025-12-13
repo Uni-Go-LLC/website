@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import createRideRequestImage from "@/assets/images/create-ride-request.png";
+import requestRideDetailsImage from "@/assets/images/request-ride-details-2.png"
 import { Layout } from "@/components/layout/Layout";
-import { Users, MapPin, DollarSign, Shield, Clock, Bell } from "lucide-react";
+import { MapPin, DollarSign, Shield, Clock, Bell } from "lucide-react";
 import { BetaSignupButton } from "@/components/BetaSignupButton";
 
 const features = [
@@ -70,21 +72,38 @@ const Riders = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Get Where You Need to Go,{" "}
-              <span className="text-gradient-gold">Affordably</span>
-            </h1>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center lg:text-left max-w-3xl mx-auto lg:mx-0"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+                Get Where You Need to Go,{" "}
+                <span className="text-gradient-gold">Affordably</span>
+              </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              Whether you need a ride around town, to the airport, or even to another city, connect with
-              verified student drivers in your community. Save money and make friends along the way.
-            </p>
-          </motion.div>
+              <p className="text-lg md:text-xl text-muted-foreground mb-8">
+                Whether you need a ride around town, to the airport, or even to another city, connect with
+                verified student drivers in your community. Save money and make friends along the way.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex justify-center lg:justify-end"
+            >
+              <div className="relative -ml-24 md:ml-0 md:mr-4 lg:mr-8">
+                <img src={createRideRequestImage} alt="Create Ride Request Screen" className="w-56 md:w-64 animate-float rounded-3xl shadow-uni-lg" />
+
+                <div className="absolute -right-24 md:-right-44 top-16">
+                  <img src={requestRideDetailsImage} alt="Create Ride Request Screen" className="w-48 md:w-56 rounded-3xl shadow-uni-lg" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
