@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Briefcase, Users, Lightbulb, TrendingUp, Heart, Target, Award, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,7 @@ const benefits = [
   {
     icon: Rocket,
     title: "Innovative Environment",
-    description: "Build features used by thousands of students daily and shape the future of campus ridesharing.",
+    description: "Build features used by students daily and shape the future of campus ridesharing.",
   },
   {
     icon: Users,
@@ -70,12 +71,12 @@ const Careers = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              We're building something extraordinary, and we're looking for talented individuals to help us 
-              shape the future. Our ridesharing platform is built exclusively for college students, making 
+              We're building something extraordinary, and we're looking for talented individuals to help us
+              shape the future. Our ridesharing platform is built exclusively for college students, making
               commuting more affordable, safer, easier, and more social.
               <br />
               <br />
-              As a fast-growing startup, we're looking for passionate individuals to help us build the 
+              As a fast-growing startup, we're looking for passionate individuals to help us build the
               next generation of campus mobility.
             </p>
           </motion.div>
@@ -95,7 +96,7 @@ const Careers = () => {
               Why Work <span className="text-gradient-gold">Here?</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join a team that's revolutionizing campus transportation and making a real impact 
+              Join a team that's revolutionizing campus transportation and making a real impact
               on student life.
             </p>
           </motion.div>
@@ -143,8 +144,8 @@ const Careers = () => {
               Our <span className="text-gradient-gold">Values</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We're driven by a commitment to excellence, integrity, and making a positive difference. 
-              We believe in empowering our team members to do their best work while fostering an 
+              We're driven by a commitment to excellence, integrity, and making a positive difference.
+              We believe in empowering our team members to do their best work while fostering an
               inclusive and supportive environment.
             </p>
           </motion.div>
@@ -189,7 +190,7 @@ const Careers = () => {
               Open <span className="text-gradient-gold">Positions</span>
             </h2>
             <p className="text-lg text-background/70 mb-8">
-              Explore our open roles and submit your application. We're always looking for talented 
+              Explore our open roles and submit your application. We're always looking for talented
               individuals who share our passion for innovation and student success.
             </p>
             <Button
@@ -197,9 +198,9 @@ const Careers = () => {
               className="shadow-gold"
               asChild
             >
-              <a href="mailto:uni.go.llc@gmail.com?subject=Career Opportunity Inquiry">
+              <Link to="/jobs">
                 View Open Positions
-              </a>
+              </Link>
             </Button>
           </motion.div>
         </div>
