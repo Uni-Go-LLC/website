@@ -85,9 +85,9 @@ export const HeroSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-end"
           >
-            <div className="relative">
+            <div className="relative mr-4 md:mr-8">
               <img src={getStartedImage} alt="Get Started Screen" className="w-56 md:w-64 animate-float rounded-3xl shadow-uni-lg" />
 
               <div className="absolute -left-24 md:-left-44 top-16">
