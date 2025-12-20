@@ -53,7 +53,7 @@ const Contact = () => {
     },
     {
       question: "Is there an Android app available?",
-      answer: "Currently, Uni Go is available as an iOS app. We are working on developing native apps for Android, which will be released in the near future."
+      answer: "Currently, Uni Go is available as an iOS app. We are working on developing an Android app, which will be released in the near future."
     },
   ];
   return (
