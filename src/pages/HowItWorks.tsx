@@ -161,7 +161,6 @@ const HowItWorks = () => {
                                         onClick={() => setActiveTab("riders")}
                                         className={`${activeTab === "riders" ? "shadow-gold bg-primary text-primary-foreground" : "bg-background"} w-full justify-center text-base md:text-lg py-6`}
                                     >
-                                        <Users className="w-4 h-4 mr-2" />
                                         Riders
                                     </Button>
                                     <Button
@@ -170,7 +169,6 @@ const HowItWorks = () => {
                                         onClick={() => setActiveTab("drivers")}
                                         className={`${activeTab === "drivers" ? "shadow-gold bg-primary text-primary-foreground" : "bg-background"} w-full justify-center text-base md:text-lg py-6`}
                                     >
-                                        <Car className="w-4 h-4 mr-2" />
                                         Drivers
                                     </Button>
                                 </div>

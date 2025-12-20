@@ -69,7 +69,6 @@ const Feedback = () => {
 
               <Button asChild size="lg" className="shadow-gold w-full sm:w-auto">
                 <a href={"https://forms.gle/zDgBJKe3ZvYWEnoF9"} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-4 h-4 mr-2" />
                   Submit Feedback
                 </a>
               </Button>

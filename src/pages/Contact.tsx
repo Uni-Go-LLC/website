@@ -90,7 +90,6 @@ const Contact = () => {
 
                 <Button asChild size="lg" className="shadow-gold w-full sm:w-auto">
                   <a href="mailto:uni.go.llc@gmail.com">
-                    <Mail className="w-5 h-5 mr-2" />
                     uni.go.llc@gmail.com
                   </a>
                 </Button>
@@ -106,7 +105,6 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold text-foreground mb-2">Instagram</h2>
                 <Button asChild size="lg" className="shadow-gold w-full sm:w-auto">
                   <a href="https://instagram.com/rideunigo" target="_blank" rel="noopener noreferrer">
-                    <Instagram className="w-5 h-5 mr-2" />
                     @rideunigo
                   </a>
                 </Button>
